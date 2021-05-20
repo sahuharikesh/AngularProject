@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 class="p-3 ">User List</h2>
+  <div class="">
+    <table border="1" class="table table-responsive-sm text-center ">
+      <thead class="bg-dark text-white">
+        <td>Id</td>
+        <td>User Name</td>
+        <td>User Email</td>
+        <td>Action</td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of data">
+          <td>{{ i.id }}</td>
+          <td>{{ i.name }}</td>
+          <td>{{ i.email }}</td>
+          <td>
+            <a mat-raised-button class=" btn btn-warning" routerLink='/user/update/{{i.id}}'><i class="fas fa-pen"></i></a>
+            &nbsp;<button mat-raised-button color="warn" (click)="deleteUser(i.id)"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
